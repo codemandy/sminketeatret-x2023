@@ -1,17 +1,12 @@
 export const socials = [
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/littlesticksdev',
-    icon: 'mdi:twitter'
+    name: "Facebook",
+    url: "https://facebook.com",
+    icon: "mdi:facebook",
   },
   {
-    name: 'GitHub',
-    url: 'https://github.com/littlesticks',
-    icon: 'mdi:github'
+    name: "Instagram",
+    url: "https://instagram.com",
+    icon: "mdi:instagram",
   },
-  {
-    name: 'Instagram',
-    url: 'https://instagram.com',
-    icon: 'mdi:instagram'
-  }
-]
+];

@@ -1,7 +1,7 @@
 ---
 import { settings } from "../data/settings";
 import Container from "./Container.astro";
-import SocialList from './SocialList.astro';
+import SocialList from "./SocialList.astro";
 import LittleSticksPlug from "./LittleSticksPlug.astro";
 ---
 
@@ -9,18 +9,12 @@ import LittleSticksPlug from "./LittleSticksPlug.astro";
   <Container>
     <div class="footer-links__grid">
       <ul>
-        <li><strong>Company</strong></li>
+        <li><strong>Sminketeatret</strong></li>
         <li>About</li>
         <li>Blog</li>
       </ul>
       <ul>
-        <li><strong>Products</strong></li>
-        <li>Store</li>
-        <li>Merch</li>
-      </ul>
-      <ul>
-        <li><strong>Support</strong></li>
-        <li>Discord</li>
+        <li><strong>Contact</strong></li>
         <li>Contact Us</li>
       </ul>
       <ul>
@@ -29,10 +23,6 @@ import LittleSticksPlug from "./LittleSticksPlug.astro";
         <li>Terms</li>
       </ul>
     </div>
-    <!-- You can delete this code or hide in the settings.ts file -->
-    {settings.showLittleSticksPlug && <div>
-     <LittleSticksPlug/>
-    </div>}
     <div class="footer-bottom__container">
       <p>&copy; {new Date().getFullYear()} {settings.name}</p>
       <SocialList />
@@ -74,12 +64,12 @@ import LittleSticksPlug from "./LittleSticksPlug.astro";
     font-size: var(--step--2);
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     .footer-links__grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  @media(max-width: 480px) {
+  @media (max-width: 480px) {
     .footer-links__grid {
       grid-template-columns: 1fr;
       gap: 2rem;
