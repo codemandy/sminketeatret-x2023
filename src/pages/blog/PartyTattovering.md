@@ -1,8 +1,8 @@
 ---
 layout: "../../layouts/Post.astro"
 title: Party Tattoo
-image: /images/11.jpg
-publishedAt: "2021-01-01"
+image: /images/19.jpg
+publishedAt: "2020-01-01"
 category: "Tattoo"
 ---
 

@@ -2,7 +2,7 @@
 layout: "../../layouts/Post.astro"
 title: T-wrap hårfletningen
 image: /images/1.jpg
-publishedAt: "2021-01-01"
+publishedAt: "2023-01-01"
 category: "T-wrap"
 ---
 
