@@ -5,7 +5,6 @@ import { formatDate } from "../utils/helpers";
 
 <a class="post-preview__link fade-in" href={post.url}>
   <article class="post-preview__article">
-    <!-- Hopefully we'll be able to use Astro's image integration for this soon -->
     <picture>
       <source srcset={`${post.frontmatter.image}`} type="image" />
       <img
@@ -38,8 +37,10 @@ import { formatDate } from "../utils/helpers";
   }
   .post-preview__article {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     align-items: center;
+    background-color: var(--theme-surface-1);
+    border-radius: 0.8rem;
   }
   .post-preview__text {
     transition: transform 0.2s ease-in-out;
@@ -47,10 +48,9 @@ import { formatDate } from "../utils/helpers";
   }
   .post-preview__category {
     width: fit-content;
-    padding: 0.25rem 0.75rem;
-    background-color: var(--theme-surface-1);
+    padding: 0.1rem 0rem;
     border-radius: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
     font-size: var(--step--3);
     /* color: #666; */
   }
@@ -68,7 +68,7 @@ import { formatDate } from "../utils/helpers";
     font-size: var(--step--1);
     color: #666;
   }
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .post-preview__article {
       grid-template-columns: 1fr;
     }

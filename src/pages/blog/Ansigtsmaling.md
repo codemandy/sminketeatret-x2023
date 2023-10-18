@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/Post.astro"
 title: Ansigtsmaling
-image: /images/4.jpg
+image: /images/2.jpeg
 publishedAt: 2022-09-03
 category: "Sminke"
 ---

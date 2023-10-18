@@ -16,32 +16,29 @@ const seo = {
   <Container>
     <article class="post-content__article">
       <div class="post-content__top fade-in">
-        <h1 class="post-content__title">{frontmatter.title}</h1>
+        {
+          frontmatter.category && (
+            <p class="post-content__category">
+              <a href={`/blog/category/${slugify(frontmatter.category)}`}>
+                {frontmatter.category}
+              </a>
+            </p>
+          )
+        }
+        <!-- <h1 class="post-content__title">{frontmatter.title}</h1> -->
+      </div>
+      <div class="post-content__image-container">
+        <!-- <img class="post-content__img" src="/images/1.jpg" alt="little tiger" /> -->
+        <img
+          class="post-content__img"
+          src="/images/2.jpeg"
+          alt="little tiger"
+        />
+        <!-- <img class="post-content__img" src="/images/3.jpg" alt="little tiger" /> -->
       </div>
       <div class="post-content__content flow fade-in">
         <slot />
       </div>
-      {
-        frontmatter.image && (
-          <img
-            width="1200"
-            height="630"
-            class="post-content__img"
-            loading="eager"
-            src={`${frontmatter.image}`}
-            alt={frontmatter.alt}
-          />
-        )
-      }
-      {
-        frontmatter.category && (
-          <p class="post-content__category">
-            <a href={`/blog/category/${slugify(frontmatter.category)}`}>
-              {frontmatter.category}
-            </a>
-          </p>
-        )
-      }
     </article>
   </Container>
 </Layout>
@@ -52,30 +49,12 @@ const seo = {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 5vh 0;
   }
-
-  .post-content__content {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .post-content__content {
-      width: 90%;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-  }
-
   .post-content__category {
     padding: 0.5rem 1rem;
     font-size: var(--step--1);
     background-color: var(--theme-surface-1);
     border-radius: 2rem;
-    color: var(--theme-primary-cat);
-    width: fit-content;
   }
   .post-content__category a {
     text-decoration: none;
@@ -88,7 +67,7 @@ const seo = {
   }
   .post-content__title {
     margin: 1rem auto;
-    font-size: var(--step-5);
+    font-size: var(--step-1);
   }
   .post-content__date {
     margin: 0 auto;
@@ -96,15 +75,22 @@ const seo = {
     color: var(--color-gray);
     font-style: italic;
   }
-  .post-content__img {
-    margin: 3rem 0 2rem 0;
-    max-width: 100%;
-    height: 60%;
-    border-radius: 2rem;
+  .post-content__image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  .post-content__img {
+    margin: 3rem 1rem 2rem 0;
+    width: 260px; /* Fixed width */
+    height: 190px; /* Fixed height */
+    object-fit: cover; /* Keep aspect ratio */
+    /* border-radius: 2rem; */
+  }
+
   .post-content__content :global(img) {
     display: block;
-    margin: 2rem auto;
     max-width: 100%;
   }
 </style>

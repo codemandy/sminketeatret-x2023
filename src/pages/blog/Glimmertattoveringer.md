@@ -2,8 +2,7 @@
 layout: "../../layouts/Post.astro"
 title: Glimmer Tattovering
 image: /images/3.jpg
-publishedAt: 2021-02-20
-category: "Glimmer Tattoveringer"
+category: "Tattoo"
 ---
 
 Glimmerer tatoveringer er den hotteste krop-kunstform i verden i dag.
