@@ -1,20 +1,16 @@
 ---
-import { Icon } from "astro-icon";
-import { socials } from "../data/socials";
 ---
 
-<ul class="social__list">
-  {
-    socials.map((social) => (
-      <li>
-        <a href={social.url} title={`Open ${social.name} profile`}>
-          <Icon name={social.icon} width="24px" height="24px" />
-        </a>
-      </li>
-    ))
-  }
-</ul>
-
+<nav class="navigation">
+  <ul class="social__list">
+    <li class="navigation__item">
+      <a class="navigation__link" href="/About">About</a>
+    </li>
+    <li class="navigation__item">
+      <a class="navigation__link" href="/Contact">Contact</a>
+    </li>
+  </ul>
+</nav>
 <style>
   .social__list {
     display: flex;
