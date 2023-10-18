@@ -1,13 +1,16 @@
 :root {
   /* Colors */
   --theme-primary: hsl(0, 0%, 5%);
+  --theme-primary-dark: hsla(0, 0%, 55%, 0.099);
   --theme-on-primary: hsl(0, 0%, 90%);
 
   --theme-primary-hover: hsl(0, 0%, 10%);
 
   --theme-primary-light: hsl(0, 0%, 80%);
+  --theme-primary-cat: hsl(32, 100%, 50%);
 
-  --theme-background: hsl(0, 0%, 98%);
+  --theme-background: hsl(0, 96%, 40%);
+  --theme-background-2: hsl(0, 0%, 98%);
   --theme-on-background: hsl(0, 0%, 5%);
 
   --theme-surface-1: hsl(0, 0%, 93%);
