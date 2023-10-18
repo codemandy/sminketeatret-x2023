@@ -1,7 +1,7 @@
 ---
-import Layout from './Page.astro';
-import Container from '../components/Container.astro';
-import { formatDate, slugify } from '../utils/helpers';
+import Layout from "./Page.astro";
+import Container from "../components/Container.astro";
+import { formatDate, slugify } from "../utils/helpers";
 
 const { frontmatter } = Astro.props;
 
@@ -26,29 +26,22 @@ const seo = {
           )
         }
         <h1 class="post-content__title">{frontmatter.title}</h1>
-        <p class="post-content__date">
-          <time>{formatDate(frontmatter.publishedAt)}</time>
-        </p>
-        <!-- Hopefully we'll be able to use Astro's image integration for this soon -->
-        {
-          frontmatter.image && (
-            <picture>
-              <source srcset={`${frontmatter.image}.webp`} type="image/webp" />
-              <img
-                width="1200"
-                height="630"
-                class="post-content__img"
-                loading="eager"
-                src={`${frontmatter.image}.png`}
-                alt={frontmatter.alt}
-              />
-            </picture>
-          )
-        }
       </div>
       <div class="post-content__content flow fade-in">
         <slot />
       </div>
+      {
+        frontmatter.image && (
+          <img
+            width="1200"
+            height="630"
+            class="post-content__img"
+            loading="eager"
+            src={`${frontmatter.image}`}
+            alt={frontmatter.alt}
+          />
+        )
+      }
     </article>
   </Container>
 </Layout>

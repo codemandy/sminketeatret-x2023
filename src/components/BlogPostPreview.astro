@@ -7,10 +7,10 @@ import { formatDate } from "../utils/helpers";
   <article class="post-preview__article">
     <!-- Hopefully we'll be able to use Astro's image integration for this soon -->
     <picture>
-      <source srcset={`${post.frontmatter.image}.webp`} type="image/webp" />
+      <source srcset={`${post.frontmatter.image}`} type="image" />
       <img
         class="post-preview__img"
-        src={`${post.frontmatter.image}.png`}
+        src={`${post.frontmatter.image}`}
         alt={`Featured image for ${post.frontmatter.title}`}
       />
     </picture>
@@ -61,7 +61,7 @@ import { formatDate } from "../utils/helpers";
     width: 300px;
     height: 100px;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   }
   .post-preview__date {
