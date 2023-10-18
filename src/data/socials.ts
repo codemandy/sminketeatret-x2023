@@ -1,12 +1,14 @@
 export const socials = [
   {
     name: "Facebook",
-    url: "https://facebook.com",
+    url: "https://www.facebook.com/sminketeatret",
     icon: "mdi:facebook",
+    target: "_blank",
   },
   {
     name: "Instagram",
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/sminketeatret/",
     icon: "mdi:instagram",
+    target: "_blank",
   },
 ];

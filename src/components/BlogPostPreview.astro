@@ -5,7 +5,6 @@ import { formatDate } from "../utils/helpers";
 
 <a class="post-preview__link fade-in" href={post.url}>
   <article class="post-preview__article">
-    <!-- Hopefully we'll be able to use Astro's image integration for this soon -->
     <picture>
       <source srcset={`${post.frontmatter.image}`} type="image" />
       <img
@@ -29,30 +28,30 @@ import { formatDate } from "../utils/helpers";
   .post-preview__link {
     text-decoration: none;
   }
-  .post-preview__link:hover .post-preview__img {
+  .post-preview__link:hover .post-preview__article {
     box-shadow: rgba(0, 0, 0, 0.1) 0 10px 20px 0;
     transform: scale(1.1);
   }
-  .post-preview__link:hover .post-preview__text {
-    transform: translateX(0.5rem);
-  }
   .post-preview__article {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     align-items: center;
+    background-color: var(--theme-surface-1);
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out; /* Added */
   }
+
   .post-preview__text {
     transition: transform 0.2s ease-in-out;
     margin-left: 1rem;
   }
   .post-preview__category {
     width: fit-content;
-    padding: 0.25rem 0.75rem;
-    background-color: var(--theme-surface-1);
-    border-radius: 2rem;
-    margin-bottom: 0.5rem;
+    padding: 0.1rem 0rem;
+    margin-bottom: 0.1rem;
     font-size: var(--step--3);
-    /* color: #666; */
+    color: var(--theme-primary-cat);
+    font-weight: 600;
   }
   .post-preview__text h2 {
     font-size: var(--step--2);
@@ -61,14 +60,14 @@ import { formatDate } from "../utils/helpers";
     width: 300px;
     height: 100px;
     object-fit: cover;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
     transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   }
   .post-preview__date {
     font-size: var(--step--1);
     color: #666;
   }
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .post-preview__article {
       grid-template-columns: 1fr;
     }
@@ -79,14 +78,7 @@ import { formatDate } from "../utils/helpers";
       object-fit: cover;
     }
     .post-preview__text {
-      margin-top: 1rem;
-    }
-    .post-preview__link:hover .post-preview__img {
-      box-shadow: none;
-      transform: none;
-    }
-    .post-preview__link:hover .post-preview__text {
-      transform: none;
+      margin: 1rem 0 0.5rem 0.2rem;
     }
   }
 </style>

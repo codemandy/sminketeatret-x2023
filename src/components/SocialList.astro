@@ -7,7 +7,12 @@ import { socials } from "../data/socials";
   {
     socials.map((social) => (
       <li>
-        <a href={social.url} title={`Open ${social.name} profile`}>
+        <a
+          href={social.url}
+          title={`Open ${social.name} profile`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Icon name={social.icon} width="24px" height="24px" />
         </a>
       </li>

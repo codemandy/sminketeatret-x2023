@@ -16,15 +16,6 @@ const seo = {
   <Container>
     <article class="post-content__article">
       <div class="post-content__top fade-in">
-        {
-          frontmatter.category && (
-            <p class="post-content__category">
-              <a href={`/blog/category/${slugify(frontmatter.category)}`}>
-                {frontmatter.category}
-              </a>
-            </p>
-          )
-        }
         <h1 class="post-content__title">{frontmatter.title}</h1>
       </div>
       <div class="post-content__content flow fade-in">
@@ -42,6 +33,15 @@ const seo = {
           />
         )
       }
+      {
+        frontmatter.category && (
+          <p class="post-content__category">
+            <a href={`/blog/category/${slugify(frontmatter.category)}`}>
+              {frontmatter.category}
+            </a>
+          </p>
+        )
+      }
     </article>
   </Container>
 </Layout>
@@ -52,13 +52,30 @@ const seo = {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: 5vh 0;
   }
+
+  .post-content__content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .post-content__content {
+      width: 90%;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+  }
+
   .post-content__category {
     padding: 0.5rem 1rem;
     font-size: var(--step--1);
     background-color: var(--theme-surface-1);
     border-radius: 2rem;
     color: var(--theme-primary-cat);
+    width: fit-content;
   }
   .post-content__category a {
     text-decoration: none;
@@ -82,7 +99,7 @@ const seo = {
   .post-content__img {
     margin: 3rem 0 2rem 0;
     max-width: 100%;
-    height: auto;
+    height: 60%;
     border-radius: 2rem;
   }
   .post-content__content :global(img) {

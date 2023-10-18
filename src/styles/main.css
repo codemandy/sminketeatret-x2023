@@ -9,7 +9,7 @@
   --theme-primary-light: hsl(0, 0%, 80%);
   --theme-primary-cat: hsl(32, 100%, 50%);
 
-  --theme-background: hsl(0, 96%, 40%);
+  --theme-background: hsla(0, 0%, 98%, 0.91);
   --theme-background-2: hsl(0, 0%, 98%);
   --theme-on-background: hsl(0, 0%, 5%);
 
@@ -33,8 +33,8 @@
   --step-4: clamp(2.3325rem, 1.8137rem + 2.5939vw, 3.6619rem);
   --step-5: clamp(2.7994rem, 2.1055rem + 3.4695vw, 4.5775rem);
 
-  --font-family-heading: "", sans-serif;
-  --font-family-body: "Playfair Display", "Open Sans", sans-serif;
+  --font-family-heading: "Montserrat", sans-serif;
+  --font-family-body: "Montserrat", "Playfair Display", "Open Sans", sans-serif;
 
   --body-max-width: 1920px;
 

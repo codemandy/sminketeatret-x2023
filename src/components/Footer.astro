@@ -10,17 +10,12 @@ import LittleSticksPlug from "./LittleSticksPlug.astro";
     <div class="footer-links__grid">
       <ul>
         <li><strong>Sminketeatret</strong></li>
-        <li>About</li>
-        <li>Blog</li>
+        <li><a class="foooter-links" href="/About">Om os</a></li>
+        <li><a class="foooter-links" href="/Nyheder">Nyheder</a></li>
       </ul>
       <ul>
-        <li><strong>Contact</strong></li>
-        <li>Contact Us</li>
-      </ul>
-      <ul>
-        <li><strong>Legal</strong></li>
-        <li>Privacy</li>
-        <li>Terms</li>
+        <li><strong>Kontakt</strong></li>
+        <li><a class="foooter-links" href="/Contact">Kontakt os</a></li>
       </ul>
     </div>
     <div class="footer-bottom__container">
@@ -47,6 +42,11 @@ import LittleSticksPlug from "./LittleSticksPlug.astro";
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  .footer-links,
+  a {
+    text-decoration: none;
   }
   .footer-links__grid ul li:first-of-type {
     margin-bottom: 0.5rem;
