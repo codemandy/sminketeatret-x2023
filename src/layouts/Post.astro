@@ -2,7 +2,7 @@
 import Layout from "./Page.astro";
 import Container from "../components/Container.astro";
 import { formatDate, slugify } from "../utils/helpers";
-
+import { Image } from "astro:assets";
 const { frontmatter } = Astro.props;
 
 const seo = {
@@ -22,12 +22,14 @@ const seo = {
         <slot />
       </div>
       {
-        frontmatter.image && (
-          <img
-            width="1200"
-            height="630"
+        frontmatter.image && frontmatter.alt && (
+          <Image
+            width="800"
+            height="420"
+            quality="75"
+            format="webp"
             class="post-content__img"
-            loading="eager"
+            loading="lazy"
             src={`${frontmatter.image}`}
             alt={frontmatter.alt}
           />

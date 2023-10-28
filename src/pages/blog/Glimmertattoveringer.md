@@ -1,7 +1,8 @@
 ---
 layout: "../../layouts/Post.astro"
 title: Glimmer Tattovering
-image: /images/3.jpg
+image: /images/3.png
+alt: Glimmer tattoo
 category: "Tattoo"
 ---
 

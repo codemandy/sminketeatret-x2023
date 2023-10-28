@@ -2,6 +2,7 @@
 layout: "../../layouts/Post.astro"
 title: Party Tattoo
 image: /images/19.jpg
+alt: Party
 publishedAt: "2020-01-01"
 category: "Tattoo"
 ---

@@ -1,36 +1,39 @@
 ---
-import Layout from '../../../layouts/Page.astro'
-import Container from '../../../components/Container.astro';
-import BlogPostsList from '../../../components/BlogPostsList.astro';
+import Layout from "../../../layouts/Page.astro";
+import Container from "../../../components/Container.astro";
+import BlogPostsList from "../../../components/BlogPostsList.astro";
 
-import {generateCategoryData} from '../../../utils/helpers.js'
+import { generateCategoryData } from "../../../utils/helpers.js";
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob('../*.{mdx,md}');
-  const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+  const allPosts = await Astro.glob("../*.{mdx,md}");
+  const sortedPosts = allPosts.sort(
+    (a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
+  );
   const allCategoriesUnique = new Set();
 
-  sortedPosts.forEach(post => {
-    if(post.frontmatter.category) {
+  sortedPosts.forEach((post) => {
+    if (post.frontmatter.category) {
       allCategoriesUnique.add(post.frontmatter.category);
     }
-  })
+  });
   const allCategoriesData = generateCategoryData(allCategoriesUnique);
-   // map through the categories array
+  // map through the categories array
   return allCategoriesData.map((category) => {
     // filter the posts that match the given category
-    const posts = sortedPosts.filter((post) => post.frontmatter.category.includes(category.name))
-      return {
-      params: {slug: category.slug}, 
+    const posts = sortedPosts.filter((post) =>
+      post.frontmatter.category.includes(category.name)
+    );
+    return {
+      params: { slug: category.slug },
       props: {
-        category: category.name, 
-        posts: posts
-      }
+        category: category.name,
+        posts: posts,
+      },
     };
   });
 }
-const {category, posts} = Astro.props;
-
+const { category, posts } = Astro.props;
 ---
 
 <Layout>
@@ -38,7 +41,7 @@ const {category, posts} = Astro.props;
     <div class="home-hero-text__container">
       <h1>{category} Posts</h1>
     </div>
-    <BlogPostsList posts={posts}/>
+    <BlogPostsList posts={posts} />
   </Container>
 </Layout>
 

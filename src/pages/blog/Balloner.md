@@ -2,6 +2,7 @@
 layout: "../../layouts/Post.astro"
 title: Balloner til fest
 image: /images/14.jpg
+alt: Ballon
 publishedAt: "2021-01-01"
 category: "Balloner"
 ---
