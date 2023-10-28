@@ -2,6 +2,8 @@
 layout: "../../layouts/Post.astro"
 title: Armbånd
 image: /images/12.jpg
+alt: Armbånd
+
 publishedAt: "2021-01-01"
 category: "Armbånd"
 ---

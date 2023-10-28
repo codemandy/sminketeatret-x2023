@@ -2,6 +2,7 @@
 layout: "../../layouts/Post.astro"
 title: Ansigtsmaling
 image: /images/21.png
+alt: Ansigtsmaling
 publishedAt: 2023-01-02
 category: "Sminke"
 ---

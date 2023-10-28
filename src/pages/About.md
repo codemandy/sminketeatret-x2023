@@ -2,6 +2,7 @@
 layout: "../layouts/About.astro"
 title: About
 image: /images/1
+alt: Image of about
 publishedAt: "2022-09-03"
 ---
 

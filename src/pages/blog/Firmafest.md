@@ -1,7 +1,8 @@
 ---
 layout: "../../layouts/Post.astro"
 title: Firmafest
-image: /images/13.jpg
+image: /images/13.png
+alt: Firmafest
 publishedAt: "2021-01-01"
 category: "Firmafest"
 ---
